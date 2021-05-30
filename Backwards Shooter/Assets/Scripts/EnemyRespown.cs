@@ -36,22 +36,23 @@ public class EnemyRespown : Singleton<EnemyRespown>
     {
         float num = 2.5f;
         float count = 0;
+        int thirdCount = defaultEnemyCount / 3;
         for (int i = 0; i < enemyCount; i++)
         {
 
-            if (i < 5)
+            if (i < thirdCount)
             {
                 z = transform.position.z + num + count;
                 x = 1.5f;
                 count--;
             }
-            else if (i < 10 && i > 4)
+            else if (i < thirdCount * 2 && i > thirdCount - 1)
             {
                 z = transform.position.z + num + count;
                 x = 0f;
                 count++;
             }
-            else if (i < 15 && i > 9)
+            else
             {
                 z = transform.position.z + num + count;
                 x = -1.5f;
